@@ -1,0 +1,11 @@
+make[1]: Entering directory '/ysyx-local-autotest/test-framework/ysyx-workbench/npc'
+/ysyx-local-autotest/test-framework/ysyx-workbench/ysyxSoC/build/VysyxSoCFull  -b --elf="/ysyx-local-autotest/test-framework/ysyx-workbench/am-kernels/benchmarks/dhrystone/build/dhrystone-riscv32e-ysyxsoc.elf"   /ysyx-local-autotest/test-framework/ysyx-workbench/am-kernels/benchmarks/dhrystone/build/dhrystone-riscv32e-ysyxsoc.bin
+Dhrystone Benchmark, Version C, Version 2.2
+Trying 50 runs through Dhrystone.
+Finished in 467 ms
+==================================================
+Dhrystone PASS         0 Marks
+                   vs. 100000 Marks (i7-7700K @ 4.20GHz)
+soc_trap
+Write magic world: aa to address: 80000000
+make[1]: Leaving directory '/ysyx-local-autotest/test-framework/ysyx-workbench/npc'

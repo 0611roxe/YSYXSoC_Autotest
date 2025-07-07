@@ -1,0 +1,82 @@
+{
+  "coremark": "pass",
+  "coremark_details": [
+    {
+      "CoreMark Size": 666,
+      "Total time (ms)": 61413,
+      "Iterations": 5,
+      "[0]crclist": "0x04x",
+      "[0]crcmatrix": "0x04x",
+      "[0]crcstate": "0x04x",
+      "[0]crcfinal": "0x04x",
+      "Marks": "0",
+      "status": "pass"
+    }
+  ],
+  "coremark_stat": "4/4",
+  "dhrystone": "pass",
+  "dhrystone_details": {
+    "Iterations": 50,
+    "Total time (ms)": 467,
+    "Marks": "0"
+  },
+  "microbench": "pass",
+  "microbench_details": {
+    "input": "test",
+    "tests": [
+      {
+        "name": "qsort",
+        "desc": "Quick sort",
+        "result": "Passed"
+      },
+      {
+        "name": "queen",
+        "desc": "Queen placement",
+        "result": "Passed"
+      },
+      {
+        "name": "bf",
+        "desc": "Brainf**k interpreter",
+        "result": "Passed"
+      },
+      {
+        "name": "fib",
+        "desc": "Fibonacci number",
+        "result": "Passed"
+      },
+      {
+        "name": "sieve",
+        "desc": "Eratosthenes sieve",
+        "result": "Passed"
+      },
+      {
+        "name": "15pz",
+        "desc": "A* 15-puzzle search",
+        "result": "Passed"
+      },
+      {
+        "name": "dinic",
+        "desc": "Dinic's maxflow algorithm",
+        "result": "Passed"
+      },
+      {
+        "name": "lzip",
+        "desc": "Lzip compression",
+        "result": "Passed"
+      },
+      {
+        "name": "ssort",
+        "desc": "Suffix sort",
+        "result": "Passed"
+      },
+      {
+        "name": "md5",
+        "desc": "MD5 digest",
+        "result": "Passed"
+      }
+    ],
+    "Scored time (ms)": 8453.927,
+    "Total time (ms)": 11659.879
+  },
+  "microbench_stat": "10/10"
+}

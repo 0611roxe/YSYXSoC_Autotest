@@ -1,0 +1,16 @@
+YSYX_HOME: /ysyx-local-autotest/test-framework/ysyx-workbench
+NEMU_HOME: "${YSYX_HOME}/nemu"
+AM_HOME: "${YSYX_HOME}/abstract-machine"
+AM_KERNELS_HOME: "${YSYX_HOME}/am-kernels"
+NPC_HOME: "${YSYX_HOME}/npc"
+SOC_HOME: "${YSYX_HOME}/ysyxSoC"
+HOST_RTL_DIR: /mnt/rtl
+HOST_LOG_DIR: /mnt/log
+LOG_DIR: "${HOST_LOG_DIR if (os.path.isdir(HOST_LOG_DIR) and os.listdir(HOST_LOG_DIR)) else NPC_HOME + '/Log'}"
+TOP_NAME: ysyx_22050499
+MAX_SIMULATE_TIME: 1000000000
+
+# When STAGE=B, the standard riscv32e processor core is connected to ysyxsoc for testing. 
+# When STAGE=D, use the minirv processor core instead (YSYX D stage)
+STAGE: B
+ARCH: "${'riscv32e-ysyxsoc' if STAGE == 'B' else 'minirv-minirv'}"

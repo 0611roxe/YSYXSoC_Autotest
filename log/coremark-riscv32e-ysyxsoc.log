@@ -1,0 +1,25 @@
+make[1]: Entering directory '/ysyx-local-autotest/test-framework/ysyx-workbench/npc'
+/ysyx-local-autotest/test-framework/ysyx-workbench/ysyxSoC/build/VysyxSoCFull  -b --elf="/ysyx-local-autotest/test-framework/ysyx-workbench/am-kernels/benchmarks/coremark/build/coremark-riscv32e-ysyxsoc.elf"   /ysyx-local-autotest/test-framework/ysyx-workbench/am-kernels/benchmarks/coremark/build/coremark-riscv32e-ysyxsoc.bin
+Running CoreMark for 5 iterations
+iteration 0 
+iteration 1 
+iteration 2 
+iteration 3 
+iteration 4 
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total time (ms)  : 61413
+Iterations       : 5
+Compiler version : GCC11.4.0
+seedcrc          : 0x04x
+[0]crclist       : 0x04x
+[0]crcmatrix     : 0x04x
+[0]crcstate      : 0x04x
+[0]crcfinal      : 0x04x
+Finised in 61413 ms.
+==================================================
+CoreMark PASS       0 Marks
+                vs. 100000 Marks (i7-7700K @ 4.20GHz)
+soc_trap
+Write magic world: aa to address: 80000000
+make[1]: Leaving directory '/ysyx-local-autotest/test-framework/ysyx-workbench/npc'
