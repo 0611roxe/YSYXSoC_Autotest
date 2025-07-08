@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.v": "verilog",
-        "*.json": "c",
-        "*.c": "c",
-        "am.h": "c",
-        "stdbool.h": "c"
-    }
-}

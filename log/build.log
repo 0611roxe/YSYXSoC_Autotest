@@ -1,5 +1,0 @@
-make[3]: Entering directory '/ysyx-local-autotest/test-framework/ysyx-workbench/ysyxSoC/build'
-make[3]: Leaving directory '/ysyx-local-autotest/test-framework/ysyx-workbench/ysyxSoC/build'
-- V e r i l a t i o n   R e p o r t: Verilator 5.036 2025-04-27 rev v5.036-48-g0dc93c1d5
-- Verilator: Built from 12.475 MB sources in 90 modules, into 2.557 MB in 15 C++ files needing 0.000 MB
-- Verilator: Walltime 7.319 s (elab=0.025, cvt=0.191, bld=7.013); cpu 0.456 s on 384 threads; alloced 89.191 MB
