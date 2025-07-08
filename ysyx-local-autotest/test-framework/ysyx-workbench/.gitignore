@@ -10,9 +10,7 @@
 !README.md
 !.gitignore
 !init.sh
-/ysyxSoC
 /fceux-am
 /npc/obj_dir
 /npc/vsrc/vtags.db
-/am-kernels
 /nvboard
