@@ -1,0 +1,4 @@
+.vscode/
+log/*
+scripts/build/*
+scripts/__pycache__/
