@@ -1,4 +1,4 @@
-.vscode/
-log/*
-scripts/build/*
-scripts/__pycache__/
+/.vscode/
+/log/*
+/scripts/build/*
+/scripts/__pycache__/
