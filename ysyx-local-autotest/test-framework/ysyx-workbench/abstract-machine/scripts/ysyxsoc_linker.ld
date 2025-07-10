@@ -4,7 +4,7 @@ MEMORY {
     mrom  : ORIGIN = 0x20000000, LENGTH = 4K
     flash : ORIGIN = 0x30000000, LENGTH = 4M
     sram  : ORIGIN = 0x0f000000, LENGTH = 8K
-    psram : ORIGIN = 0x80000000, LENGTH = 16M
+    psram : ORIGIN = 0x80000000 + 4, LENGTH = 16M -4
     sdram : ORIGIN = 0xa0000000, LENGTH = 16M
 }
 
@@ -64,17 +64,23 @@ SECTIONS {
     /*=========================================================*/
     /*====================heap与stack管理======================*/
     /*=========================================================*/
-    /*栈空间分配到sram中*/
-    . = _ssbl_end;
-    _stack_top = ALIGN(0x8);
-    _stack_pointer = ORIGIN(sram) + LENGTH(sram);
+    /* stack：放到 SDRAM 顶部 */
+    _stack_pointer = ORIGIN(sdram) + LENGTH(sdram);
+    _stack_top = _stack_pointer - 0x200000; /* 2MB 栈空间 */
 
-    . = _bss_end; /*.bss的最后地址*/
-    _heap_start = ALIGN(0x10); /*.代表的地址是.data,.bss分配完后的一个地址,不用担心重叠问题*/
-    /*_heap_end   = _heap_start + 0x10000; [>在trm.c中有用到<]*/
-    _heap_end   = ORIGIN(sdram) + LENGTH(sdram); /*在trm.c中有用到*/
+    /* heap：放在 .bss 结束之后 */
+    . = _bss_end;
+    _heap_start = ALIGN(0x4);
+    _heap_end = _stack_top; /* 堆最大到栈底，避免重叠 */
 }
 
+    /* . = _ssbl_end;
+    _stack_top = ALIGN(0x8);
+    _stack_pointer = ORIGIN(sdram) + LENGTH(sdram); */
+
+    /* . = _bss_end;  .bss的最后地址 */
+    /* _heap_start = ALIGN(0x10); .代表的地址是.data,.bss分配完后的一个地址,不用担心重叠问题 */
+    /* _heap_end   = _heap_start + 0x10000; [>在trm.c中有用到<] */
 
 
 /*[> 仅只用了ram的版本<]*/

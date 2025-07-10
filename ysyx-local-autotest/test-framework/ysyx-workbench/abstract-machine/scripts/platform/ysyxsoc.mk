@@ -22,13 +22,9 @@ image: $(IMAGE).elf
 	@echo + OBJCOPY "->" $(IMAGE_REL).bin
 	@$(OBJCOPY) -S --set-section-flags .bss=alloc,contents -O binary $(IMAGE).elf $(IMAGE).bin
 
+
 run: image
-ifneq ($(strip $(FILTERED_IMAGE_LOG)),)
-	$(MAKE) -C $(NPC_HOME) ISA=$(ISA) run IMG=$(IMAGE).bin > $(LOG_DIR)/$(FILTERED_IMAGE_LOG) 2>&1
-else
-	@echo $(NPC_HOME) $(ISA) $(IMAGE).bin $(LOG_DIR)
-	$(MAKE) -C $(NPC_HOME) ISA=$(ISA) run IMG=$(IMAGE).bin
-endif
+	$(MAKE) -C $(NPC_HOME) ISA=$(ISA) run  IMG=$(IMAGE).bin
 
 #gdb: image
 	#$(MAKE) -C $(NPC_HOME) ISA=$(ISA) gdb  IMG=$(IMAGE).bin
