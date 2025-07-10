@@ -1,5 +1,5 @@
 #include <am.h>
-#include <loongarch/loongarch32r.h>
+#include <riscv/riscv.h>
 #include <klib.h>
 
 static Context* (*user_handler)(Event, Context*) = NULL;
@@ -7,8 +7,7 @@ static Context* (*user_handler)(Event, Context*) = NULL;
 Context* __am_irq_handle(Context *c) {
   if (user_handler) {
     Event ev = {0};
-    uintptr_t ecode = 0;
-    switch (ccode) {
+    switch (c->mcause) {
       default: ev.event = EVENT_ERROR; break;
     }
 
@@ -23,7 +22,7 @@ extern void __am_asm_trap(void);
 
 bool cte_init(Context*(*handler)(Event, Context*)) {
   // initialize exception entry
-  asm volatile("csrwr %0, 0xc" : : "r"(__am_asm_trap));  // 0xc = eentry
+  asm volatile("csrw mtvec, %0" : : "r"(__am_asm_trap));
 
   // register event handler
   user_handler = handler;
@@ -36,7 +35,11 @@ Context *kcontext(Area kstack, void (*entry)(void *), void *arg) {
 }
 
 void yield() {
-  asm volatile("li.w $a7, -1; syscall 0");
+#ifdef __riscv_e
+  asm volatile("li a5, -1; ecall");
+#else
+  asm volatile("li a7, -1; ecall");
+#endif
 }
 
 bool ienabled() {
