@@ -2,3 +2,4 @@
 /log/*
 /scripts/build/*
 /scripts/__pycache__/
+clangd_trace
